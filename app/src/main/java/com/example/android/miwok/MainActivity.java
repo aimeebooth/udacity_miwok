@@ -15,14 +15,10 @@
  */
 package com.example.android.miwok;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.TextView;
-
-import static com.example.android.miwok.R.id.numbers;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,73 +29,21 @@ public class MainActivity extends AppCompatActivity {
     // Set the content of the activity to use the activity_main.xml layout file
     setContentView(R.layout.activity_main);
 
-    // Find the View that shows the numbers category
-    TextView colors = (TextView) findViewById(R.id.colors);
+    // Find the view pager that will allow the user to swipe between fragments
+    ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-    // Set a click listener on that View
-    colors.setOnClickListener(new View.OnClickListener() {
-      // The code in this method will be executed when the numbers View is clicked on.
-      @Override
-      public void onClick(View view) {
-        openColorsList(view);
-      }
-    });
+    TabFragmentPagerAdapter adapter = new TabFragmentPagerAdapter(getSupportFragmentManager());
+    viewPager.setAdapter(adapter);
 
-    // Find the View that shows the numbers category
-    TextView family = (TextView) findViewById(R.id.family);
+    // Give the TabLayout the ViewPager
+    TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+    tabLayout.setupWithViewPager(viewPager);
 
-    // Set a click listener on that View
-    family.setOnClickListener(new View.OnClickListener() {
-      // The code in this method will be executed when the numbers View is clicked on.
-      @Override
-      public void onClick(View view) {
-        openFamilyList(view);
-      }
-    });
-
-    // Find the View that shows the numbers category
-    TextView numbers = (TextView) findViewById(R.id.numbers);
-
-    // Set a click listener on that View
-    numbers.setOnClickListener(new View.OnClickListener() {
-      // The code in this method will be executed when the numbers View is clicked on.
-      @Override
-      public void onClick(View view) {
-       openNumbersList(view);
-      }
-    });
-
-    // Find the View that shows the numbers category
-    TextView phrases = (TextView) findViewById(R.id.phrases);
-
-    // Set a click listener on that View
-    phrases.setOnClickListener(new View.OnClickListener() {
-      // The code in this method will be executed when the numbers View is clicked on.
-      @Override
-      public void onClick(View view) {
-        openPhrasesList(view);
-      }
-    });
-  }
-
-  public void openColorsList(View view) {
-    Intent intent = new Intent(this, ColorsActivity.class);
-    startActivity(intent);
-  }
-
-  public void openFamilyList(View view) {
-    Intent intent = new Intent(this, FamilyActivity.class);
-    startActivity(intent);
-  }
-
-  public void openNumbersList(View view) {
-    Intent intent = new Intent(this, NumbersActivity.class);
-    startActivity(intent);
-  }
-
-  public void openPhrasesList(View view) {
-    Intent intent = new Intent(this, PhrasesActivity.class);
-    startActivity(intent);
+    //// Create an adapter that knows which fragment should be shown on each page
+    //CategoryAdapter adapter = new CategoryAdapter(getSupportFragmentManager());
+    //
+    //// Set the adapter onto the view pager
+    //viewPager.setAdapter(adapter);
   }
 }
 
