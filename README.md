@@ -17,6 +17,13 @@ Getting Started
 This sample uses the Gradle build system. To build this project, use the
 "gradlew build" command or use "Import Project" in Android Studio.
 
+Demo
+----
+
+<img src="http://imgur.com/1bc27847-e66e-4641-a3bf-942b1f9deb7f" title="Video Walkthrough" width="" alt="Video Walkthrough" />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 Support
 -------
 
