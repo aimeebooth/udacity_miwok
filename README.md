@@ -20,7 +20,7 @@ This sample uses the Gradle build system. To build this project, use the
 Demo
 ----
 
-<img src="http://imgur.com/1bc27847-e66e-4641-a3bf-942b1f9deb7f" title="Video Walkthrough" width="" alt="Video Walkthrough" />
+<img src="http://i.imgur.com/qHoe99H.gif" title="Video Walkthrough" width="" alt="Video Walkthrough" />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
